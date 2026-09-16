@@ -17,22 +17,33 @@ window.addEventListener('scroll', () => {
   header.style.boxShadow = window.scrollY > 8 ? '0 4px 20px rgba(24,34,56,0.06)' : 'none';
 });
 
-// Scroll reveal animation
+// Scroll reveal animation (with a fail-safe so content is never stuck
+// invisible — e.g. if IntersectionObserver is unsupported, or a page is
+// captured/printed as a whole rather than scrolled by a person)
 const revealEls = document.querySelectorAll(
   '.about-grid, .skill-card, .project-card, .timeline-item, .education-card, .contact-grid'
 );
-revealEls.forEach(el => el.classList.add('reveal'));
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
+if ('IntersectionObserver' in window) {
+  revealEls.forEach(el => el.classList.add('reveal'));
 
-revealEls.forEach(el => observer.observe(el));
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealEls.forEach(el => observer.observe(el));
+
+  // Fail-safe: reveal everything after 2s no matter what, so a slow or
+  // missed observer callback never leaves a section permanently hidden.
+  setTimeout(() => {
+    revealEls.forEach(el => el.classList.add('is-visible'));
+  }, 2000);
+}
 
 // Contact form -> opens the user's email client with prefilled content
 // (This is a static site with no backend, so this is the most reliable
