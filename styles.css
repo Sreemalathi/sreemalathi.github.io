@@ -276,8 +276,9 @@ nav a:hover {
 
 .about-grid {
     display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
-    gap: 100px;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 60px;
+    align-items: start;
 }
 
 .about-intro p {
@@ -316,14 +317,6 @@ nav a:hover {
     font-size: 14px;
 }
 
-.drives-me {
-    padding: 30px 34px;
-    background: #f7f9fc;
-    border: 1px solid #e6eaf0;
-    border-left: 3px solid #5273a8;
-    border-radius: 4px 14px 14px 4px;
-}
-
 .drives-me-label {
     display: block;
     font-size: 12px;
@@ -338,6 +331,67 @@ nav a:hover {
     font-size: 17px;
     color: #3a4457;
     line-height: 1.6;
+}
+
+.drives-me p + p {
+    margin-top: 16px;
+}
+
+.what-i-do {
+    padding-top: 4px;
+}
+
+.what-i-do-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.what-i-do-list li {
+    position: relative;
+    padding-left: 20px;
+    font-size: 14.5px;
+    color: #3a4457;
+    line-height: 1.55;
+    margin-bottom: 12px;
+}
+
+.what-i-do-list li:last-child {
+    margin-bottom: 0;
+}
+
+.what-i-do-list li::before {
+    content: "*";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #5273a8;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+.about-left {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.skills-cert-card {
+    padding: 30px 34px;
+    background: #f7f9fc;
+    border: 1px solid #e6eaf0;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.skills-cert-group h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #172033;
+    margin-bottom: 12px;
 }
 
 
@@ -626,6 +680,18 @@ nav a:hover {
     margin-top: 5px;
 }
 
+.timeline-tag {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: rgba(157, 180, 214, 0.15);
+    color: #9db4d6;
+    font-size: 10px;
+    font-weight: 700;
+    vertical-align: middle;
+}
+
 
 /* EDUCATION */
 
@@ -707,21 +773,18 @@ nav a:hover {
     display: inline-flex;
     flex-direction: column;
     gap: 2px;
-    background: #172033;
-    border-radius: 14px;
-    padding: 8px;
     margin-top: 6px;
 }
 
 .contact-bar a {
-    padding: 13px 20px;
-    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 13px 4px;
+    color: #172033;
     font-size: 14px;
     font-weight: 600;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    text-decoration-color: rgba(255, 255, 255, 0.4);
+    border-bottom: 1px solid #e9edf3;
     transition: 0.3s;
 }
 
@@ -730,7 +793,18 @@ nav a:hover {
 }
 
 .contact-bar a:hover {
-    text-decoration-color: #ffffff;
+    color: #5273a8;
+}
+
+.contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #edf2f9;
+    flex-shrink: 0;
 }
 
 .contact-form {
