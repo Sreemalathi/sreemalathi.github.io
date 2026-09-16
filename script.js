@@ -15,3 +15,13 @@ if (navToggle && navLinks) {
     });
   });
 }
+
+// Contact form: clear fields after sending
+const contactForm = document.querySelector('.contact-form');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', () => {
+    // Delay so the mailto link is built from the filled-in values first
+    setTimeout(() => contactForm.reset(), 100);
+  });
+}
