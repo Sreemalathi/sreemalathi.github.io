@@ -7,8 +7,9 @@ Live at: https://sreemalathi.github.io (once published)
 ## Structure
 - `index.html` — page content
 - `styles.css` — all styling
-- `script.js` — nav toggle, scroll reveal, contact form
-- `assets/` — profile photo (`profile.jpg`) and CV (`Sree_Malathi_CV.pdf`) go here
+- `script.js` — mobile nav toggle
+- `images/profile.jpg` — your headshot (hero section)
+- `cv.pdf` — your CV, at the repo root (linked from the "Download CV" button)
 
 ## Local preview
 Just open `index.html` in a browser — no build step needed.
@@ -25,6 +26,7 @@ Just open `index.html` in a browser — no build step needed.
 4. Site goes live at https://sreemalathi.github.io within a minute or two.
 
 ## To do
-- [ ] Add `assets/profile.jpg` (real headshot)
-- [ ] Add `assets/Sree_Malathi_CV.pdf` (Download CV button links here)
-- [ ] Swap placeholder `#` project links for real GitHub repo / Tableau Public links
+- [ ] Add `images/profile.jpg` (real headshot)
+- [ ] Add `cv.pdf` at the repo root (Download CV button links here)
+- [ ] `View Code` links currently point to your GitHub profile generally — swap in the actual repo URL for each project once they're up
+- [ ] The Eniac × Magist "Tableau Public" link points to a tinyurl placeholder — swap for your real Tableau Public link
