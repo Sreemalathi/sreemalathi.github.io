@@ -1,2 +1,0 @@
-Add your CV as cv.pdf at the repo root — that's what the "Download CV" button links to.
-Delete this placeholder file once cv.pdf is added.
